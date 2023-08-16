@@ -8,11 +8,13 @@ import data from '../data/data.json'
 function ForceDirectedGraph() {
 
   let newNodes = data.nodes.map((d) => {
-    return `"id":${d.country}, ${d.codes}`
+    return {
+      "id": `country: ${d.country}, code: ${d.code}`
+    }
   })
 
-  console.log(newNodes)
-
+  data.nodes = newNodes;
+  console.log(data)
   const options = {
     node: {
       label: 'country',
