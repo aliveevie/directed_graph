@@ -10,6 +10,8 @@ function App() {
 
  // ... (previous code)
 
+
+
 useEffect(() => {
   const width = 1000;
   const height = 800;
@@ -39,9 +41,19 @@ useEffect(() => {
       .force('collide', d3.forceCollide(20))
       .on('tick', ticked);
 
-    // Rest of the code remains unchanged
+      function ticked() {
+        link
+          .attr('x1', (d) => d.source.x)
+          .attr('y1', (d) => d.source.y)
+          .attr('x2', (d) => d.target.x)
+          .attr('y2', (d) => d.target.y);
+        node.style('transform', (d) => `translate(${d.x}px, ${d.y}px)`);
+      }
+
+      // Rest of the code remains unchanged
+      
   });
-}, [ticked]);
+}, []);
 
 // ... (rest of the code)
 
@@ -153,14 +165,7 @@ useEffect(() => {
 
      // ... (previous code)
 
-    function ticked() {
-  link
-    .attr('x1', (d) => d.source.x)
-    .attr('y1', (d) => d.source.y)
-    .attr('x2', (d) => d.target.x)
-    .attr('y2', (d) => d.target.y);
-  node.style('transform', (d) => `translate(${d.x}px, ${d.y}px)`);
-}
+ 
 
 // ... (rest of the code)
 
