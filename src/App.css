@@ -23,26 +23,26 @@
   color: #61dafb;
 }
 
-
-
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #282c34;
   height: 100vh;
+ 
 }
 
-.graph-container {
-  max-width: 90%; /* Use a percentage to allow responsiveness */
-  max-height: 90vh; /* Use a percentage of viewport height */
-  width: 700px;
-  height: 700px;
-  display: block;
-   /* Prevent graph overflow */
-}
+
 
 .showcase-button {
   margin-top: 16px; /* Add spacing between the graph and the button */
+}
+
+.rv-xy-plot {
+  position: relative;
+  left: 50;
+  font-family: sans-serif;
+  color: red;
+
 }
 
